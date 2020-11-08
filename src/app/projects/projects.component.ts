@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-projects',
@@ -7,14 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 	loading: boolean = true;
+	private title: string = "naveen's blog | projects";
 	@Input() animations: boolean = true;
-	constructor() {}
+	constructor(private titleService: Title) {}
 
 	ngOnInit(): void {
+		this.titleService.setTitle(this.title);
 		this.load();
 	}
 
-	load() {
+	load(): void {
 		this.loading = true;
 		this.loading = false;
 	}
