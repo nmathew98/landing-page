@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as Prismic from 'prismic-javascript';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class PrismicService {
 	constructor() {}
@@ -11,14 +11,14 @@ export class PrismicService {
 		let result = [];
 
 		await Prismic.getApi(`https://${repository_name}.prismic.io/api/v2`)
-			.then(function(api) {
+			.then(function (api) {
 				return api.query(predicates, { orderings: `${orderings}` });
 			})
 			.then(
-				function(response) {
+				function (response) {
 					result = response.results;
 				},
-				function(err) {
+				function (err) {
 					console.log('Something went wrong: ', err);
 				}
 			);
@@ -29,14 +29,14 @@ export class PrismicService {
 	async queryByUID(repository_name: string, type: string, uid: string): Promise<any> {
 		let result = {};
 		await Prismic.getApi(`https://${repository_name}.prismic.io/api/v2`)
-			.then(function(api) {
+			.then(function (api) {
 				return api.getByUID(type, uid);
 			})
 			.then(
-				function(response) {
+				function (response) {
 					result = response;
 				},
-				function(err) {
+				function (err) {
 					console.log('Something went wrong: ', err);
 				}
 			);
