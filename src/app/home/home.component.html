@@ -1,9 +1,11 @@
 <div class="grid grid-cols-7 h-screen">
-	<div class="bg-gray-900 h-full text-white col-span-7 sm:col-span-7 md:col-span-7 lg:col-span-3 xl:col-span-3">
-		<div class="container mx-auto px-12 py-8">
-			<div class="animate__animated animate__fadeInLeft -mx-1">
+	<div
+		class="bg-gray-900 md:overflow-hidden h-auto text-white col-span-7 sm:col-span-7 md:col-span-3 lg:col-span-3 xl:col-span-3"
+	>
+		<div class="container mx-auto px-12 py-8 max-w-md lg:max-w-screen-lg">
+			<div class="animate__animated animate__fadeInUp animate__fast -mx-1">
 				<svg
-					class="w-20 h-20 lg:w-48 lg:h-48"
+					class="w-16 h-16 lg:w-20 lg:h-20"
 					width="166px"
 					height="193px"
 					viewBox="0 0 166 193"
@@ -52,76 +54,160 @@
 				</svg>
 			</div>
 			<div
-				class="font-black text-lg lg:text-6xl leading-none tracking-tight text-blue-200 pt-24 animate__animated animate__fadeInLeft animate__delay-2s"
+				class="font-black text-5xl lg:text-6xl leading-none tracking-tight text-blue-200 pt-24 animate__animated animate__lightSpeedInLeft animate__delay-2s"
 			>
 				<h1>hi,<br />i'm <span class="italic">naveen.</span></h1>
 			</div>
 			<div
-				class="font-thin text-base lg:text-xl leading-none text-blue-500 w-3/5 animate__animated animate__fadeInLeft animate__delay-3s"
+				class="font-thin text-sm lg:text-lg w-64 leading-none text-blue-500 animate__animated animate__fadeInUp animate__delay-3s"
 			>
-				<p>
-					i'm a recent physics graduate with minors in mathematics and computer science who's
-					<span class="italic">passionate</span> about building things
-				</p>
+				<p>i design and build your ideas.</p>
 			</div>
 
-			<div
-				class="font-black leading-none text-base lg:text-2xl animate__animated animate__lightSpeedInLeft animate__delay-4s pt-20"
-			>
-				<p>
-					<span class="text-blue-200">got an idea?</span
-					><a href="#" class="hover:underline text-blue-500 pl-2 italic">get in touch.</a>
-				</p>
-				<p>
-					<span class="text-blue-200">checkout my portfolio</span
-					><span class="text-blue-500 invisible sm:invisible md:invisible lg:visible xl:visible">
-						<svg
-							class="inline w-12 h-12"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M17 8l4 4m0 0l-4 4m4-4H3"
-							/>
-						</svg>
-					</span>
-				</p>
-			</div>
-			<div
-				class="font-black text-sm lg:text-base leading-wider text-blue-500 animate__animated animate__lightSpeedInLeft animate__delay-4s"
-			>
-				<a class="hover:underline pr-2" href="https://github.com/nmathew98">github</a>·<a
-					class="hover:underline pl-2"
-					href="#"
-					>linkedin</a
-				>
-			</div>
-
-			<div
-				class="visible sm:visible md:visible lg:invisible xl:invisible pt-8 animate__animated animate__fadeIn animate__delay-5s items-center"
-			>
-				<svg
-					class="animate-bounce w-8 h-8 text-blue-500"
-					fill="none"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-				</svg>
+			<div class="animate__animated animate__lightSpeedInLeft animate__delay-4s">
+				<div class="font-black text-sm lg:text-lg mt-24 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56 pb-0">
+					<p>
+						<span class="text-blue-200">got an idea?</span
+						><a href="#" target="_blank" class="hover:underline text-blue-500 pl-2 italic">get in touch.</a>
+					</p>
+					<!--<p class="sm:-my-2 text-blue-200">checkout my portfolio</p>-->
+				</div>
+				<div class="font-light text-xs lg:text-base leading-wide text-blue-500 pt-0">
+					<a href="https://github.com/nmathew98" target="_blank" class="hover:underline pr-2">github</a>·<a
+						href="#"
+						target="_blank"
+						class="hover:underline pl-2"
+						>linkedin</a
+					>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="bg-gray-300 h-full text-gray-900 col-span-7 sm:col-span-7 md:col-span-7 lg:col-span-4 xl:col-span-4">
-		<div class="container mx-auto px-12 py-8">
-			<h1>HELLO WORLD</h1>
+	<div
+		class="bg-gray-100 md:overflow-y-scroll max-h-full text-gray-900 col-span-7 sm:col-span-7 md:col-span-4 lg:col-span-4 xl:col-span-4"
+	>
+		<div
+			class="animate__animated animate__fadeInUp animate__delay-5s container mx-auto px-12 py-8 max-w-md lg:max-w-screen-lg"
+		>
+			<div class="pb-8 text-gray-700 text-xl lg:text-4xl font-normal lg:font-thin uppercase">
+				<h1>projects i've worked on</h1>
+			</div>
+			<div class="max-w-sm w-full lg:max-w-full lg:flex rounded-full shadow-2xl">
+				<div
+					class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t border-transparent lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+					style="background-image: url('assets/card-left.jpg')"
+					title="Woman holding a mug"
+				></div>
+				<div
+					class="border-r border-b border-l border-transparent lg:border-l-0 lg:border-t lg:border-transparent bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+				>
+					<div class="grid grid-cols-1">
+						<div class="mb-8">
+							<div class="text-gray-900 font-bold text-xl mb-2">
+								Can coffee make you a better developer?
+							</div>
+							<p class="text-gray-700 text-base">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
+								Maiores et perferendis eaque, exercitationem praesentium nihil.
+							</p>
+						</div>
+						<div class="flex flex-wrap">
+							<button
+								class="flex-auto w-1/3 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2"
+							>
+								<span class="uppercase text-sm md:px-4"
+									><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
+								>
+							</button>
+							<button
+								class="flex-auto w-1/3 max-w-md bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+							>
+								<span class="uppercase text-sm md:px-4"
+									><a href="#" target="_blank">try a live demo</a></span
+								>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="max-w-sm w-full lg:max-w-full lg:flex rounded-full shadow-2xl">
+				<div
+					class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t border-transparent lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+					style="background-image: url('assets/card-left.jpg')"
+					title="Woman holding a mug"
+				></div>
+				<div
+					class="border-r border-b border-l border-transparent lg:border-l-0 lg:border-t lg:border-transparent bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+				>
+					<div class="grid grid-cols-1">
+						<div class="mb-8">
+							<div class="text-gray-900 font-bold text-xl mb-2">
+								Can coffee make you a better developer?
+							</div>
+							<p class="text-gray-700 text-base">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
+								Maiores et perferendis eaque, exercitationem praesentium nihil.
+							</p>
+						</div>
+						<div class="flex flex-wrap">
+							<button
+								class="flex-auto w-1/3 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2"
+							>
+								<span class="uppercase text-sm md:px-4"
+									><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
+								>
+							</button>
+							<button
+								class="flex-auto w-1/3 max-w-md bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+							>
+								<span class="uppercase text-sm md:px-4"
+									><a href="#" target="_blank">try a live demo</a></span
+								>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="max-w-sm w-full lg:max-w-full lg:flex rounded-full shadow-2xl">
+				<div
+					class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t border-transparent lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+					style="background-image: url('assets/card-left.jpg')"
+					title="Woman holding a mug"
+				></div>
+				<div
+					class="border-r border-b border-l border-transparent lg:border-l-0 lg:border-t lg:border-transparent bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+				>
+					<div class="grid grid-cols-1">
+						<div class="mb-8">
+							<div class="text-gray-900 font-bold text-xl mb-2">
+								Can coffee make you a better developer?
+							</div>
+							<p class="text-gray-700 text-base">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
+								Maiores et perferendis eaque, exercitationem praesentium nihil.
+							</p>
+						</div>
+						<div class="flex flex-wrap">
+							<button
+								class="flex-auto w-1/3 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2"
+							>
+								<span class="uppercase text-sm md:px-4"
+									><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
+								>
+							</button>
+							<button
+								class="flex-auto w-1/3 max-w-md bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+							>
+								<span class="uppercase text-sm md:px-4"
+									><a href="#" target="_blank">try a live demo</a></span
+								>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
