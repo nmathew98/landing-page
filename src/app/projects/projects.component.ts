@@ -10,6 +10,7 @@ export class ProjectsComponent implements OnInit {
 	loading: boolean = true;
 	private title: string = "naveen's blog | projects";
 	@Input() animations: boolean = true;
+
 	constructor(private titleService: Title) {}
 
 	ngOnInit(): void {

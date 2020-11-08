@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 	private animations: boolean = true;
 	private title: string = "naveen's blog";
 	showContact: boolean = false;
+
 	constructor(private cookieService: CookieService, private titleService: Title) {}
 
 	ngOnInit(): void {

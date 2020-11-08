@@ -8,6 +8,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class ContactComponent implements OnInit {
 	private title: string = "naveen's blog | contact";
+
 	constructor(private titleService: Title) {}
 
 	ngOnInit(): void {
