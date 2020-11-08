@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
 	selector: 'app-home',
@@ -6,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-	constructor() {}
+	loading: boolean = true;
+	animations: boolean = true;
+	constructor(private cookieService: CookieService) { }
+	
+	ngOnInit(): void {
+		this.load();
+		// Set a cookie if person has visited before
+		this.cookieService.set('visited', "1");
+	}
 
-	ngOnInit(): void {}
+	load() {
+		this.loading = true;
+		// Animations on each reload gets annoying quick
+		if (this.cookieService.check('visited') === true) {
+			this.animations = false;
+		}
+		console.log(this.animations);
+		this.loading = false;
+	}
 }
