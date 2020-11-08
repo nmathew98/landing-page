@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent],
+	declarations: [AppComponent, HomeComponent, ContactComponent, ProjectsComponent],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [CookieService],
 	bootstrap: [AppComponent],

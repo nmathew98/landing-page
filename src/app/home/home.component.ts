@@ -9,12 +9,18 @@ import { CookieService } from 'ngx-cookie-service';
 export class HomeComponent implements OnInit {
 	loading: boolean = true;
 	animations: boolean = true;
-	constructor(private cookieService: CookieService) { }
-	
+	showContact: boolean = false;
+	constructor(private cookieService: CookieService) {}
+
 	ngOnInit(): void {
 		this.load();
 		// Set a cookie if person has visited before
-		this.cookieService.set('visited', "1");
+		this.cookieService.set('visited', '1');
+	}
+
+	ngAfterViewInit() {
+		// Turn off animations once view is initialized
+		this.animations = !this.cookieService.check('visited');
 	}
 
 	load() {
@@ -23,7 +29,10 @@ export class HomeComponent implements OnInit {
 		if (this.cookieService.check('visited') === true) {
 			this.animations = false;
 		}
-		console.log(this.animations);
 		this.loading = false;
+	}
+
+	toggleContact() {
+		this.showContact = !this.showContact;
 	}
 }

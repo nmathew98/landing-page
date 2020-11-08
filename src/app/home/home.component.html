@@ -94,8 +94,10 @@
 						<div class="font-extrabold text-sm lg:text-lg">
 							<p>
 								<span class="text-blue-200">got an idea?</span
-								><a href="#" target="_blank" class="hover:underline text-blue-500 pl-2 italic"
-									>get in touch.</a
+								><a
+									(click)="toggleContact()"
+									class="cursor-pointer hover:underline text-blue-500 pl-2 italic"
+									>{{ showContact === !true ? 'get in touch' : 'see my work' }}</a
 								>
 							</p>
 						</div>
@@ -119,109 +121,12 @@
 		<div
 			class="bg-gray-100 md:overflow-y-scroll max-h-full text-gray-900 col-span-7 sm:col-span-7 md:col-span-4 lg:col-span-4 xl:col-span-4"
 		>
-			<div
-				class="flex flex-col animate__animated animate__fadeInUp animate__delay-5s"
-				[ngClass]="animations === false ? 'no-animation' : ''"
-			>
-				<div class="mx-12 my-8">
-					<div class="text-blue-900 text-xl lg:text-4xl font-normal lg:font-thin uppercase">
-						<h1>projects i've worked on</h1>
-					</div>
-				</div>
-
-				<div class="mx-12 mb-4">
-					<div class="min-w-0 p-4 bg-white rounded-lg shadow-lg">
-						<h4 class="mb-2 font-semibold text-gray-800">Revenue</h4>
-						<p class="text-gray-700">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
-							quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione,
-							nihil dolorum.
-						</p>
-						<div class="text-blue-500 font-light text-sm uppercase flex flex-row flex-wrap">
-							<p class="pr-2">#machinelearning</p>
-							<p>#python</p>
-						</div>
-						<div class="flex flex-row flex-wrap mt-6">
-							<button
-								class="max-w-md mb-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2"
-							>
-								<span class="uppercase text-sm md:px-4"
-									><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
-								>
-							</button>
-							<button
-								class="max-w-md mb-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-							>
-								<span class="uppercase text-sm md:px-4"
-									><a href="#" target="_blank">try a live demo</a></span
-								>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="mx-12 mb-4">
-					<div class="min-w-0 p-4 bg-white rounded-lg shadow-lg">
-						<h4 class="mb-2 font-semibold text-gray-800">Revenue</h4>
-						<p class="text-gray-700">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
-							quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione,
-							nihil dolorum.
-						</p>
-						<div class="text-blue-500 font-light text-sm uppercase flex flex-row flex-wrap">
-							<p class="pr-2">#machinelearning</p>
-							<p>#python</p>
-						</div>
-						<div class="flex flex-row flex-wrap mt-6">
-							<button
-								class="max-w-md mb-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2"
-							>
-								<span class="uppercase text-sm md:px-4"
-									><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
-								>
-							</button>
-							<button
-								class="max-w-md mb-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-							>
-								<span class="uppercase text-sm md:px-4"
-									><a href="#" target="_blank">try a live demo</a></span
-								>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="mx-12 mb-4">
-					<div class="min-w-0 p-4 bg-white rounded-lg shadow-lg">
-						<h4 class="mb-2 font-semibold text-gray-800">Revenue</h4>
-						<p class="text-gray-700">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam
-							quod? Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione,
-							nihil dolorum.
-						</p>
-						<div class="text-blue-500 font-light text-sm uppercase flex flex-row flex-wrap">
-							<p class="pr-2">#machinelearning</p>
-							<p>#python</p>
-						</div>
-						<div class="flex flex-row flex-wrap mt-6">
-							<button
-								class="max-w-md mb-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-2"
-							>
-								<span class="uppercase text-sm md:px-4"
-									><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
-								>
-							</button>
-							<button
-								class="max-w-md mb-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-							>
-								<span class="uppercase text-sm md:px-4"
-									><a href="#" target="_blank">try a live demo</a></span
-								>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			<ng-container *ngIf="showContact === true; else projects">
+				<app-contact></app-contact>
+			</ng-container>
+			<ng-template #projects>
+				<app-projects [animations]="animations"></app-projects>
+			</ng-template>
 		</div>
 	</div>
 </ng-container>
