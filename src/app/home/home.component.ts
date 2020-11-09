@@ -33,7 +33,9 @@ export class HomeComponent implements OnInit {
 		if (this.cookieService.check('visited') === true) {
 			this.animations = false;
 		}
-		this.loading = false;
+		setTimeout(function () {
+			this.loading = false;
+		}, 3000);
 	}
 
 	toggleContact(): void {
