@@ -1,9 +1,9 @@
 module.exports = {
 	future: {
 		// removeDeprecatedGapUtilities: true,
-		//purgeLayersByDefault: false,
+		purgeLayersByDefault: false,
 	},
-	purge: [],
+	purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
 	theme: {
 		extend: {
 			fontSize: {
