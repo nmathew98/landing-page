@@ -19,13 +19,12 @@ export class HomeComponent implements OnInit {
 	ngOnInit(): void {
 		this.titleService.setTitle(this.title);
 		this.load();
-		// Set a cookie if person has visited before
-		this.cookieService.set('visited', '1');
 	}
 
 	ngAfterViewInit() {
 		// Turn off animations once view is initialized
 		this.animations = !this.cookieService.check('visited');
+		this.cookieService.set('visited', '1');
 	}
 
 	load(): void {
