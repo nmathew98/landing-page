@@ -4,6 +4,11 @@
 
 export const environment = {
 	production: false,
+	token_name: '',
+	owner_email: 'naveenmat98@gmail.com',
+	api_url: 'https://naveensblog.cdn.prismic.io/api/v2',
+	email_url: '',
+	api_version: '',
 };
 
 /*

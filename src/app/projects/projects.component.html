@@ -9,7 +9,52 @@
 			</div>
 		</div>
 
-		<div class="self-center mx-12 mb-4" data-aos="fade-up">
+		<div class="self-center mx-12 mb-4" data-aos="fade-up" *ngFor="let project of projects">
+			<div class="w-auto p-4 pb-0 bg-white rounded-lg shadow-lg">
+				<h1 class="text-lg font-semibold text-gray-800">{{ project.data.project_name[0].text }}</h1>
+				<p class="text-base text-gray-700 text-left sm:text-justify">
+					{{ project.data.project_description[0].text }}
+				</p>
+				<div class="text-blue-500 font-light text-sm uppercase flex flex-row flex-wrap">
+					<p class="pr-2" *ngFor="let tag of project.tags">#{{ tag }}</p>
+				</div>
+				<div class="flex flex-row flex-wrap mt-8 place-content-center sm:place-content-start">
+					<a
+						*ngIf="project.data.live_demo_link.url !== undefined"
+						[href]="project.data.live_demo_link.url"
+						target="_blank"
+					>
+						<button
+							[ngClass]="
+								project.data.github_link.url === undefined
+									? 'w-full sm:w-auto mb-4 px-4 py-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded'
+									: 'w-full sm:w-auto mb-4 mx-4 sm:mx-0 px-4 py-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded'
+							"
+						>
+							<span class="uppercase text-sm">try a live demo</span>
+						</button>
+					</a>
+					<a
+						*ngIf="project.data.github_link.url !== undefined"
+						href="{{ project.data.github_link.url }}"
+						[ngClass]="project.data.github_link.url === undefined ? 'opacity-50 cursor-not-allowed' : ''"
+						target="_blank"
+					>
+						<button
+							[ngClass]="
+								project.data.live_demo_link.url === undefined
+									? 'w-full sm:w-auto mb-4 px-4 py-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded'
+									: 'w-full sm:w-auto mb-4 mx-4 px-4 py-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded'
+							"
+						>
+							<span class="uppercase text-sm">view on github</span>
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="self-center mx-12 mb-4" data-aos="fade-up">
 			<div class="min-w-0 w-auto p-4 pb-0 bg-white rounded-lg shadow-lg">
 				<h1 class="text-lg font-semibold text-gray-800">Revenue</h1>
 				<p class="text-base text-gray-700 text-left sm:text-justify">
@@ -63,34 +108,6 @@
 					</button>
 				</div>
 			</div>
-		</div>
-
-		<div class="self-center mx-12 mb-4" data-aos="fade-up">
-			<div class="min-w-0 w-auto p-4 pb-0 bg-white rounded-lg shadow-lg">
-				<h1 class="text-lg font-semibold text-gray-800">Revenue</h1>
-				<p class="text-base text-gray-700 text-left sm:text-justify">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, cum commodi a omnis numquam quod?
-					Totam exercitationem quos hic ipsam at qui cum numquam, sed amet ratione! Ratione, nihil dolorum.
-				</p>
-				<div class="text-blue-500 font-light text-sm uppercase flex flex-row flex-wrap">
-					<p class="pr-2">#machinelearning</p>
-					<p>#python</p>
-				</div>
-				<div class="flex flex-row flex-wrap mt-8 place-content-center sm:place-content-start">
-					<button
-						class="w-full sm:w-auto mb-4 mx-4 sm:mx-0 px-4 py-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded"
-					>
-						<span class="uppercase text-sm"><a href="#" target="_blank">try a live demo</a></span>
-					</button>
-					<button
-						class="w-full sm:w-auto mb-4 mx-4 px-4 py-2 shadow-md bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded"
-					>
-						<span class="uppercase text-sm"
-							><a href="https://github.com/nmathew98" target="_blank">view on github</a></span
-						>
-					</button>
-				</div>
-			</div>
-		</div>
+		</div> -->
 	</div>
 </ng-container>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
+import { DocService } from '../services/doc.service';
 
 @Component({
 	selector: 'app-home',

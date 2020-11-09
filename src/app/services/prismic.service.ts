@@ -10,7 +10,8 @@ export class PrismicService {
 	async query(repository_name: string, predicates: any[], orderings: string): Promise<any> {
 		let result = [];
 
-		await Prismic.getApi(`https://${repository_name}.prismic.io/api/v2`)
+		await Prismic.default
+			.getApi(`https://${repository_name}.prismic.io/api/v2`)
 			.then(function (api) {
 				return api.query(predicates, { orderings: `${orderings}` });
 			})
@@ -28,7 +29,8 @@ export class PrismicService {
 
 	async queryByUID(repository_name: string, type: string, uid: string): Promise<any> {
 		let result = {};
-		await Prismic.getApi(`https://${repository_name}.prismic.io/api/v2`)
+		await Prismic.default
+			.getApi(`https://${repository_name}.prismic.io/api/v2`)
 			.then(function (api) {
 				return api.getByUID(type, uid);
 			})
