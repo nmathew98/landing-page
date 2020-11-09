@@ -7,6 +7,7 @@
 						src="../../assets/logo.png"
 						class="animate__animated animate__fadeInUp animate__fast w-16 h-16 lg:w-20 lg:h-20"
 						[ngClass]="animations === false ? 'no-animation' : ''"
+						(load)="imageLoad()"
 					/>
 					<!-- <div
 						class="animate__animated animate__fadeInUp animate__fast font-extrabold italic"
@@ -56,7 +57,7 @@
 										<text
 											id="n"
 											fill-rule="nonzero"
-											font-family="Arial-Black, Arial Black"
+											font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji"
 											font-size="138"
 											font-weight="700"
 											fill="#BEE3F8"
@@ -70,7 +71,7 @@
 					</div> -->
 				</div>
 
-				<div class="mx-12 my-24">
+				<div class="mx-12 my-24" *ngIf="imageLoaded">
 					<div class="font-extrabold text-5xl lg:text-6xl leading-none tracking-tight text-blue-200">
 						<div
 							class="animate__animated animate__lightSpeedInLeft animate__delay-2s whitespace-wrap sm:whitespace-no-wrap"
@@ -86,17 +87,23 @@
 							class="animate__animated animate__fadeInUp animate__delay-3s"
 							[ngClass]="animations === false ? 'no-animation' : ''"
 						>
-							<p>i design and build your ideas</p>
+							<p class="whitespace-normal">
+								i'm a recent graduate who's passionate about building applications to solve problems
+							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="mx-12 my-8">
+				<div class="mx-12 my-8" *ngIf="imageLoaded">
 					<div
 						class="animate__animated animate__lightSpeedInLeft animate__delay-4s"
 						[ngClass]="animations === false ? 'no-animation' : ''"
 					>
 						<div class="invisible font-extrabold text-sm lg:text-lg">
+							<p>
+								<span class="text-blue-200">check out my portfolio</span>
+							</p>
+							<!--
 							<p>
 								<span class="text-blue-200">got an idea?</span
 								><a
@@ -105,6 +112,7 @@
 									>{{ showContact === !true ? 'get in touch' : 'see my work' }}</a
 								>
 							</p>
+							-->
 						</div>
 						<div class="flex flex-row flex-no-wrap">
 							<div class="font-thin text-sm lg:text-base text-blue-500 mr-1">
@@ -113,10 +121,12 @@
 								>
 							</div>
 							<div class="font-extra-bold text-sm lg:text-base tracking-tight text-blue-500 mr-1">
-								<p class="invisible">·</p>
+								<p>·</p>
 							</div>
-							<div class="invisible font-thin text-sm lg:text-base text-blue-500 mr-1">
-								<a href="#" target="_blank" class="hover:underline">linkedin</a>
+							<div class="font-thin text-sm lg:text-base text-blue-500 mr-1">
+								<a href="https://www.linkedin.com/in/nmathew98/" target="_blank" class="hover:underline"
+									>linkedin</a
+								>
 							</div>
 						</div>
 					</div>
@@ -125,6 +135,7 @@
 		</div>
 		<div
 			class="bg-gray-100 md:overflow-y-scroll max-h-full text-gray-900 col-span-7 sm:col-span-7 md:col-span-4 lg:col-span-4 xl:col-span-4"
+			*ngIf="imageLoaded"
 		>
 			<ng-container *ngIf="showContact === true; else projects">
 				<app-contact></app-contact>

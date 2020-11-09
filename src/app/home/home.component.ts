@@ -10,6 +10,7 @@ import { DocService } from '../services/doc.service';
 })
 export class HomeComponent implements OnInit {
 	loading: boolean = true;
+	imageLoaded: boolean = false;
 	private animations: boolean = true;
 	private title: string = "naveen's blog";
 	showContact: boolean = false;
@@ -33,12 +34,16 @@ export class HomeComponent implements OnInit {
 		if (this.cookieService.check('visited') === true) {
 			this.animations = false;
 		}
-		setTimeout(function () {
-			this.loading = false;
-		}, 3000);
+
+		this.loading = false;
 	}
 
 	toggleContact(): void {
 		this.showContact = !this.showContact;
+	}
+
+	imageLoad(): void {
+		console.log('test');
+		this.imageLoaded = true;
 	}
 }
