@@ -13,8 +13,13 @@ module.exports = {
 			},
 		},
 	},
-	variants: {},
+	variants: {
+		mixBlendMode: ['responsive'],
+		backgroundBlendMode: ['responsive'],
+		isolation: ['responsive'],
+	},
 	plugins: [
+		require('tailwindcss-blend-mode')(),
 		//require('@tailwindcss/typography')
 	],
 };
